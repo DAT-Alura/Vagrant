@@ -47,3 +47,32 @@
 - __Configura a máquina virtual__
 
 > Alternativa correta! Além de criar, também aplica as configurações na máquina virtual.
+
+## Aula 2
+
+1 - Na configuração ```forwarded_port```, usamos configurações ```guest``` e ```host```, como no exemplo abaixo:
+
+```config.vm.network "forwarded_port", guest: 80, host: 8088```
+
+O que é ```guest``` e ```host```?
+
+- O host define uma porta na faixa 0 a 1024, enquanto o guest define uma porta na faixa 1024 a 49151
+- __O guest é a máquina virtual, host é o sistema que roda o provider/hypervisor__
+
+> Alternativa correta! O host é o hospedeiro (o sistema que permite o guest (convidado) a rodar). O guest é a máquina virtual.
+
+- O guest define a porta da máquina virtual chamada guest, e host a porta da máquina virtual host
+- O guest é o sistema que roda o provider/hypervisor, host é a máquina virtual
+
+2 - Veja a configuração abaixo:
+
+```config.vm.network "public_network", ip: "192.168.1.17"```
+
+Usando o VirtualBox como provedor, qual será o Network-Adapter usado?
+
+- __Bridge__
+
+> Alternativa correta! Bridge permite que a máquina virtual participe na rede "pública" (empresarial).
+
+- NAT
+- Host-only
