@@ -102,3 +102,24 @@ Obs: Você sempre pode verificar todos os comandos na documentação ou na linha
 - __vagrant ssh-config__
 
 > Alternativa correta! O comando apresenta várias informações úteis como host name, porta, usuário e localização da chave privada.
+
+## Aula 4
+
+1 - O que significa provisionar?
+
+- Significa providenciar a rede, CPU e armazenamento
+- __Significa providenciar tudo que for preciso para executar um serviço__
+
+> Alternativa correta! Provisionar significa fornecer a rede, CPU, memória, espaço, mas também o sistema operacional e pacotes, além da implantação em si. Tudo o que for preciso para rodar/executar o serviço. Melhor ainda, fica automatizado e pode ser repetido a qualquer momento.
+
+- Significa usar virtualização
+- Significa instalar o sistema operacional em uma máquina virtual
+
+2 - Qual é o mapeamento padrão da pasta compartilhada?
+
+- No host é compartilhado uma pasta shared. No guest essa pasta é chamado de /host.
+- __No host é compartilhado a pasta que possui o Vagrantfile. No guest essa pasta é chamada de /vagrant.__
+
+> Alternativa correta! Logada a máquina virtual, podemos acessar o host pela pasta /vagrant. Por padrão, é compartilhado todo diretório onde se encontra o Vagrantfile.
+
+- Por padrão não existe nenhuma pasta compartilhada.
