@@ -76,3 +76,29 @@ Usando o VirtualBox como provedor, qual será o Network-Adapter usado?
 
 - NAT
 - Host-only
+
+## Aula 3
+
+1 - Ao usar o comando ```vagrant ssh```, é estabelecido uma conexão SSH com a máquina virtual. O que sabemos sobre essa conexão?
+
+- __É usada uma chave pública e privada para se autenticar__
+
+> Alternativa correta! As chaves são automaticamente geradas e a chave pública é adicionada na máquina virtual.
+
+- __É usado localhost para se conectar com a máquina virtual__
+
+> Alternativa correta! O padrão é usar o ```localhost```.
+
+- É usado a porta 22 no host para se conectar com a máquina virtual
+
+2 - Qual é o comando para listar as configurações SSH?
+
+Obs: Você sempre pode verificar todos os comandos na documentação ou na linha de comando:
+
+```vagrant list-commands```
+
+- agrant ssh --list-config
+- vagrant ssh list
+- __vagrant ssh-config__
+
+> Alternativa correta! O comando apresenta várias informações úteis como host name, porta, usuário e localização da chave privada.
