@@ -123,3 +123,13 @@ Obs: Você sempre pode verificar todos os comandos na documentação ou na linha
 > Alternativa correta! Logada a máquina virtual, podemos acessar o host pela pasta /vagrant. Por padrão, é compartilhado todo diretório onde se encontra o Vagrantfile.
 
 - Por padrão não existe nenhuma pasta compartilhada.
+
+3 - Os provisionadores são chamados sempre:
+
+Obs: Se tiver com dúvida, verifique a [documentação](https://www.vagrantup.com/docs/provisioning).
+
+- ... quando executamos o comando vagrant reload
+- ... quando executamos comando vagrant up
+- __... quando executamos o comando vagrant provision__
+
+> Alternativa correta! Esse comando pede explicitamente a execução de todos os provisionadores configurados.
