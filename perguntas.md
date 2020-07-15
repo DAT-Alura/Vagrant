@@ -133,3 +133,67 @@ Obs: Se tiver com dúvida, verifique a [documentação](https://www.vagrantup.co
 - __... quando executamos o comando vagrant provision__
 
 > Alternativa correta! Esse comando pede explicitamente a execução de todos os provisionadores configurados.
+
+## Aula 5
+
+1 - Veja o Vagrantfile abaixo:
+
+``` Vagrantfile
+Vagrant.configure("2") do |config|
+
+  config.vm.define "phpweb" do |php_config|
+    php_config.vm.box = "apache"
+  end
+
+  config.vm.define "mysqldb" do |mysql_config|
+    mysql_config.vm.box = "ubuntu/bionic64"
+  end
+end
+```
+
+Quais comandos abaixo sobem, de uma vez só, as duas máquinas configuradas acima?
+
+- __vagrant up__
+
+> Alternativa correta! Ao usar vagrant up, subimos todas as máquinas, na ordem da declaração no Vagrantfile
+
+- vagrant provision
+- vagrant up --all
+- __vagrant up phpweb mysqldb__
+
+> Alternativa correta! No entanto, o comando sobe primeiro a máquina phpweb e depois o mysqldb (mesmo se forem declaradas em uma outra ordem no Vagrantfile)
+
+2 - Você está ajudando uma outra equipe de desenvolvimento, que também usa Vagrant. Ao executar o comando vagrant status, você recebe a seguinte saída:
+
+``` Bash
+$vagrant status
+Current machine states:
+testing                  poweroff (virtualbox)
+homologacao              not created (virtualbox)
+production               running (virtualbox)
+```
+
+Sabendo disso, quais afirmações abaixo são verdadeiras?
+
+- Temos três máquinas rodando
+- __Duas máquinas já foram importadas__
+
+> Alternativa correta! As máquinas testing e production já foram importadas e rodaram pelo menos uma vez. A máquina homologacao ainda não foi importada e criada.
+
+- __Para parar a máquina production, podemos usar o comando ```vagrant halt production```__
+
+> Alternativa correta! O comando vagrant halt desliga a máquina virtual e ela assume o status poweroff.
+
+- Existem três Vagrantfile diferentes, um arquivo para cada ambiente
+
+3 - O foco do curso é o Vagrant, mas vimos também alguns detalhes sobre o Puppet. O que podemos dizer sobre o Puppet?
+
+- __É uma ferramenta relacionada ao IaC (Infrastructure as Code)__
+
+> Alternativa correta! Através do Puppet, definimos a configuração da máquina em um script, como se tudo fosse um código.
+
+- O Puppet também cria a máquina virtual e instala o sistema operacional
+- O Vagrant não oferece suporte ao Puppet
+- __Puppet precisa de um agent instalado, como na máquina guest__
+
+> Alternativa correta! Para aplicar o script de configuração (*.pp), é precisa ter instalado um puppet client na máquina guest.
