@@ -257,3 +257,31 @@ O que você sabe sobre a máquina host?
 - __O Ansible deve estar instalado na mesma máquina do Vagrant, pois usamos o provisioner do Vagrant para chamar o Ansible__
 
 > Alternativa correta! O Vagrant vai tentar chamar o Ansible na própria máquina host.
+
+## Aula 7
+
+1 - Com qual comando você pode ver todas as máquinas configuradas no host, garantindo que entradas inválidas não apareçam?
+
+- vagrant global-status
+- vagrant box prune
+- __vagrant global-status --prune__
+
+> Alternativa correta! O comando global-status mostra todas as máquinas configuradas no host, e a flag --prune garante que entradas desatualizadas serão removidas.
+
+- vagrant status --global
+
+2 - Vimos os comandos do Vagrant para controlar uma máquina virtual, como ```vagrant up``` ou ```vagrant provision```.
+
+Em configurações Multi-Machine, é possível ser mais específico e usar o nome da configuração/máquina, por exemplo ```vagrant up phpweb```.
+
+Nesses comandos, em lugar do nome, podemos usar também:
+
+- O ID da box
+- __O ID da máquina__
+
+> Alternativa correta! Você pode passar o nome ou o ID. O importante é que podemos executar o comando a partir de qualquer pasta, usando o ID da máquina.
+> Funciona a partir de qualquer diretório, por exemplo:
+> ```vagrant destroy -f <ID>```
+
+- O nome do provedor
+- O nome da box
