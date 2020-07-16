@@ -197,3 +197,63 @@ Sabendo disso, quais afirmações abaixo são verdadeiras?
 - __Puppet precisa de um agent instalado, como na máquina guest__
 
 > Alternativa correta! Para aplicar o script de configuração (*.pp), é precisa ter instalado um puppet client na máquina guest.
+
+## Aula 6
+
+1 - Quais foram as principais diferenças entre Puppet e Ansible mencionadas no vídeo?
+
+- O Ansible não pode ser integrado com o Vagrant, já o Puppet, sim.
+- O Ansible não faz parte das ferramentas IaC (Infrastructure as Code), já o Puppet, sim
+- __O Ansible não precisa de um cliente na máquina guest, o Puppet sim.__
+
+> Alternativa correta! O Ansible não possui nenhum cliente na máquina a configurar, no entanto precisa de Python pré-instalado.
+
+- __O Ansible empurra as configurações do host para o guest, o Puppet "puxa" as configurações do host para o guest.__
+
+> Alternativa correta! Por isso o Ansible não precisa do cliente instalado, pois empurra os comandos para o guest, através do SSH.
+
+2 - Quais são os pré-requisitos para rodar o Ansible?
+
+- __O host precisa ser um sistema *NIX (algum sistema Unix)__
+
+> Alternativa correta! Infelizmente o Ansible não funciona no Windows. Por isso criamos uma máquina virtual com Ubuntu, só para instalar e rodar o Ansible.
+
+- O host deve ter Python instalado
+- __O SSH deve funcionar entre o host e o guest__
+
+> Alternativa correta! O Ansible envia comandos SSH do host para o guest.
+
+3 - Vimos durante a aula dois arquivos específicos do Ansible (existem mais), o arquivo __playbook.yml__ e __hosts__.
+
+Qual é o papel do arquivo __hosts__?
+
+- Possui todos os detalhes do provisionamento, como a instalação dos pacotes e inicialização do serviço a rodar.
+- __É o inventário que define quais máquinas queremos provisionar__
+
+> Alternativa correta! O arquivo hosts possui os endereços das máquinas onde queremos aplicar o provisionamento. Podemos definir grupos de máquinas e definir detalhes da conexão SSH, como a chave ou usuário.
+
+- Possui todas a configurações referente à CPU, memória, armazenamento e sistema operacional
+
+4 - Novamente, você foi chamado para ajudar uma equipe que usa o Vagrant, mas agora também tem o Ansible envolvido. Você encontrou o Vagrantfile abaixo:
+
+``` Vagrantfile
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/bionic64"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.inventory_path = "./hosts"
+    ansible.playbook = "./playbook.yml"
+  end
+end
+```
+
+O que você sabe sobre a máquina host?
+
+- Os arquivos hosts e playbook.yml devem estar na mesma pasta do Vagrantfile
+- O Ansible vai configurar e alterar a máquina host local
+- __O Ansible deve estar instalado na mesma máquina do Vagrant, pois usamos o provisioner do Vagrant para chamar o Ansible__
+
+> Alternativa correta! O Vagrant vai tentar chamar o Ansible na própria máquina host.
