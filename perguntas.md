@@ -285,3 +285,32 @@ Nesses comandos, em lugar do nome, podemos usar também:
 
 - O nome do provedor
 - O nome da box
+
+## Aula 8
+
+1 - Com a virtualização através dos Hypervisors, podemos diminuir os recursos físicos na empresa. Podemos aproveitar melhor cada hardware, instalando vários sistemas operacionais na mesma infraestrutura, reduzindo assim os custos de luz e rede, já que não teremos mais vários servidores físicos, e teremos menos ociosidade do hardware.
+
+Mas as máquinas virtuais também possuem problemas e desvantagens. Quais identificamos no último vídeo?
+
+- Cada máquina virtual possui o seu sistema operacional, que terá o seu custo de hardware para manter suas funcionalidades
+
+> Alternativa correta! Por exemplo, para isolar o MySQL, teremos que carregar um sistema operacional inteiro, que vai ocupar o hardware do host.
+
+- __É impossível aproveitar alguma biblioteca do sistema operacional do host__
+
+> Alternativa correta! O objetivo do Hypervisor é justamente simular uma infraestrutura e isolar o sistema operacional do host.
+
+- Dificuldade de gerar um backup
+- Dificuldade de manter e inicializar a máquina virtual
+
+2 - Vimos as diferenças entre containers e virtualização, mas eles também têm algo em comum. O quê?
+
+- __Ambos servem para isolar um processo ou aplicação__
+
+> Alternativa correta! Ambos possibilitam rodar uma aplicação ou processo de maneira isolada, sem "sujar" ou ter a influência do sistema do host por baixo dos panos.
+
+- Ambos são baseados em tecnologia Linux
+- Ambos emulam o hardware
+- __Ambos fazem parte do mundo DevOps__
+
+> Alternativa correta! A virtualização foi um passo fundamental e importante para facilitar a criação do recursos (diminuindo o tempo e gasto, aumentando confiabilidade, etc) e os containers agilizam ainda mais o deploy de aplicações. Ambos são pilares do mundo DevOps.
